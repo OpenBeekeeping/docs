@@ -1,0 +1,117 @@
+/* Map Starlight's colours and type onto the Open Beekeeping design tokens.
+   Starlight sets data-theme="dark" or "light" on <html>, which the design system reads. */
+
+:root,
+:root[data-theme='light'] {
+	--sl-color-bg: var(--surface);
+	--sl-color-bg-nav: var(--surface);
+	--sl-color-bg-sidebar: var(--surface);
+	--sl-color-bg-inline-code: var(--surface-sunken);
+	--sl-color-bg-accent: var(--brand);
+	--sl-color-hairline: var(--line);
+	--sl-color-hairline-light: var(--line);
+	--sl-color-hairline-shade: var(--line);
+
+	--sl-color-white: var(--ink);
+	--sl-color-gray-1: var(--ink);
+	--sl-color-gray-2: var(--ink);
+	--sl-color-gray-3: var(--ink-muted);
+	--sl-color-gray-4: var(--ink-muted);
+	--sl-color-gray-5: var(--line-strong);
+	--sl-color-gray-6: var(--surface-raised);
+	--sl-color-gray-7: var(--surface-sunken);
+	--sl-color-black: var(--surface);
+
+	--sl-color-text: var(--ink);
+	--sl-color-text-accent: var(--brand-ink);
+	--sl-color-text-invert: var(--on-brand);
+	--sl-color-accent-low: var(--surface-hover);
+	--sl-color-accent: var(--brand);
+	--sl-color-accent-high: var(--brand-ink);
+
+	--sl-font: var(--font-sans);
+	--sl-font-mono: var(--font-mono);
+	--sl-shadow-sm: none;
+	--sl-shadow-md: none;
+	--sl-shadow-lg: none;
+}
+
+/* Headings in the mono face, body in the sans (brand book: Type). */
+.sl-markdown-content :is(h1, h2, h3, h4, h5, h6),
+h1#_top,
+.hero h1 {
+	font-family: var(--font-mono);
+	letter-spacing: -0.04em;
+	word-spacing: -0.2em;
+	text-wrap: balance;
+}
+
+/* Nearly square corners, no gradients. */
+.sl-markdown-content :is(pre, code, .expressive-code .frame),
+.sl-link-button,
+.card,
+.sl-link-card {
+	border-radius: var(--radius-sm) !important;
+}
+
+/* Links in brand-ink so they read on both themes. */
+.sl-markdown-content a:not(:where(.not-content *)) {
+	color: var(--brand-ink);
+	text-underline-offset: 0.2em;
+}
+
+/* Primary action buttons: brand fill with an on-brand outline. */
+.sl-link-button.primary {
+	background: var(--brand);
+	border: 1.5px solid var(--on-brand);
+	color: var(--on-brand);
+	font-family: var(--font-mono);
+	text-transform: lowercase;
+}
+.sl-link-button.secondary,
+.sl-link-button.minimal {
+	font-family: var(--font-mono);
+	text-transform: lowercase;
+}
+
+/* Sidebar group labels and the "on this page" heading as interface labels. */
+.sidebar-content .large,
+.sidebar-content summary .group-label,
+starlight-toc h2 {
+	font-family: var(--font-mono);
+	font-weight: 600;
+	letter-spacing: 0.02em;
+	text-transform: lowercase;
+}
+
+:focus-visible {
+	outline: 2px solid var(--focus-ring);
+	outline-offset: 2px;
+}
+
+/* Current page in the sidebar: brand fill with on-brand text, readable on both themes. */
+.sidebar-content a[aria-current='page'],
+.sidebar-content a[aria-current='page']:hover,
+.sidebar-content a[aria-current='page']:focus {
+	background: var(--brand);
+	color: var(--on-brand);
+}
+
+/* Callouts use the status colours; notes and tips stay neutral. */
+.starlight-aside {
+	border-radius: var(--radius-sm);
+	background: var(--surface-raised);
+	border-inline-start-color: var(--line-strong);
+}
+.starlight-aside .starlight-aside__title {
+	color: var(--ink);
+}
+.starlight-aside--tip {
+	border-inline-start-color: var(--ok);
+}
+.starlight-aside--caution {
+	border-inline-start-color: var(--warn);
+}
+.starlight-aside--danger {
+	border-inline-start-color: var(--alert);
+}

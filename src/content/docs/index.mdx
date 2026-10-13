@@ -1,0 +1,39 @@
+---
+title: Open Beekeeping docs
+description: How to use, run and contribute to Open Beekeeping’s open source tools for beekeepers.
+template: splash
+hero:
+  tagline: Open source code and tools for beekeepers. The code is public, free to use and open to change.
+  actions:
+    - text: get started
+      link: /about/
+      variant: primary
+    - text: get the code
+      link: https://github.com/OpenBeekeeping
+      variant: secondary
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+:::caution[Early days]
+Open Beekeeping’s tools are in early development and not yet ready for use. These pages grow with them.
+:::
+
+<CardGrid>
+	<Card title="Your account">
+		One Open Beekeeping account signs you in to every Open Beekeeping app, with no password to
+		remember. [Signing in](/accounts/signing-in/)
+	</Card>
+	<Card title="OpenBKA">
+		Membership and records for beekeeping associations, run by you or hosted for you.
+		[What OpenBKA does](/openbka/overview/)
+	</Card>
+	<Card title="Run your own">
+		Host OpenBKA for your association on a free Cloudflare account, with member data kept in the EU.
+		[Self-hosting](/openbka/self-hosting/)
+	</Card>
+	<Card title="Help build it">
+		Report a problem, suggest an improvement or send a change.
+		[Contributing](/contributing/)
+	</Card>
+</CardGrid>
